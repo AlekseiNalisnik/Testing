@@ -2,6 +2,7 @@ const { join } = require('path');
 const express = require('express');
 const { getSliced } = require('./utils');
 const { data } = require('./data.js');
+const  axios  =  require ( ' axios ' );
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/list', (req, res) => {
-    console.log(req.query);
+    console.log('req.query - ', req.query);
 
     const { count } = req.query;
 

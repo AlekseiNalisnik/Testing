@@ -10,7 +10,20 @@ const getSliced = (data, count) => {
    return data.slice(0, count);
 };
 
+const encode = (str) => {
+    str = str.toLowerCase();
+    let arr = str.split('');
+    let strReturn = '';
+    arr.forEach((item, index) => {
+        let buffer = arr[index];
+        delete arr[index];
+        if(arr.includes(item) == true) strReturn += ')';
+        else strReturn += '(';
+        arr[index] = buffer;
+    });
+    return strReturn;
+};
 
 module.exports = {
-    getSliced
+    getSliced, encode
 };

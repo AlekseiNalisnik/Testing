@@ -14,12 +14,13 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log('/list/count=3');
-        fetch('/list').then(res => res.json()).then(res => this.setState({ list: res }))
+        console.log('/list/count=4');
+        // fetch('/list').then(res => res.json()).then(res => this.setState({ list: res }));
+        axios.get('/list').then(res => res.data).then(res => this.setState({list: res}));
     }
 
     render() {
-        console.log('state', this.state);
+        console.log('state!!!', this.state);
 
         const { list } = this.state;
 
